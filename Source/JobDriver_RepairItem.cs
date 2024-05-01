@@ -116,13 +116,12 @@ namespace Repair
                 {
 //                    Debug.PrintLine("repairToil.tick.Check");
 //                    pawn.jobs.CheckForJobOverride();
-
                     job.bill.Notify_PawnDidWork(pawn);
                     job.SetTarget(TargetIndex.B, item);
 
-                    pawn.skills.Learn(SkillDefOf.Crafting, Settings.SkillGain);
-                    pawn.GainComfortFromCellIfPossible();
+                    pawn.skills?.Learn(SkillDefOf.Crafting, Settings.SkillGain);
 
+                    pawn.GainComfortFromCellIfPossible();
                     ticksToNextRepair -= pawn.GetStatValue(StatDefOf.WorkSpeedGlobal)*table.GetStatValue(StatDefOf.WorkTableWorkSpeedFactor);
                     if (ticksToNextRepair > 0.0)
                         return;

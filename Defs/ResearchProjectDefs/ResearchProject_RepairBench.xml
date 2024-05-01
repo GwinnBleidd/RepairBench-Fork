@@ -10,8 +10,8 @@
 		<prerequisites>
 			<li>Machining</li>
 		</prerequisites>
-		<researchViewX>5</researchViewX>
-		<researchViewY>4</researchViewY>
+		<researchViewX>7</researchViewX>
+		<researchViewY>6</researchViewY>
 	</ResearchProjectDef>
 
 </Defs>
