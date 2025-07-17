@@ -112,7 +112,7 @@ namespace Repair
                     Debug.PrintLine("repairToil.PostInit");
                 },
 
-                tickAction = () =>
+                tickIntervalAction = (int delta) =>
                 {
 //                    Debug.PrintLine("repairToil.tick.Check");
 //                    pawn.jobs.CheckForJobOverride();
@@ -121,7 +121,7 @@ namespace Repair
 
                     pawn.skills?.Learn(SkillDefOf.Crafting, Settings.SkillGain);
 
-                    pawn.GainComfortFromCellIfPossible();
+                    pawn.GainComfortFromCellIfPossible(delta);
                     ticksToNextRepair -= pawn.GetStatValue(StatDefOf.WorkSpeedGlobal)*table.GetStatValue(StatDefOf.WorkTableWorkSpeedFactor);
                     if (ticksToNextRepair > 0.0)
                         return;
